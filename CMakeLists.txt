@@ -17,14 +17,13 @@ message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 include_directories("../socket_connect/lib")
 include_directories("../socket_connect/src/developing")
 include_directories("../socket_connect/src/client")
-include_directories("../socket_connect/lib/src/server")
-include_directories("../socket_connect/lib/src/relay_server")
+include_directories("../socket_connect/src/server")
+include_directories("../socket_connect/src/relay_server")
 
-file(GLOB native_srcs "./lib/*.cpp")
+
 add_library(
                 test-lib
                 SHARED
-                ${native_srcs}
                 ../socket_connect/lib/socket_connect.cpp
                 ../socket_connect/src/client/client.cpp
                 ../socket_connect/src/server/server.cpp
